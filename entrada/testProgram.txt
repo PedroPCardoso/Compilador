@@ -1,0 +1,6 @@
+program 
+function nome ()
+begin
+read();
+end
+

@@ -1,0 +1,2 @@
+Erro: Linha: 1 Inicialize um bloco de constante, variavel ou funcao
+

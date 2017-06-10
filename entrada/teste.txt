@@ -1,0 +1,12 @@
+program start a<b = 10;
+a >= b;
+tet // aseaeasease12561241
+/*
+
+
+a
+}]*/ -1251.12
+
+"String aqui " a||t 
+a&& 1123
+123 a

@@ -1,6 +1,6 @@
 program 
 function nome ()
 begin
-read();
+amora(integer a,real b);
 end
 

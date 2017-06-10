@@ -4,7 +4,14 @@
 02 ( Delimitador
 02 ) Delimitador
 03 begin Palavra Reservada
-03 read Palavra Reservada
+03 amora Identificador
+03 ( Delimitador
+03 integer Palavra Reservada
+03 a Identificador
+03 , Delimitador
+03 real Palavra Reservada
+03 b Identificador
+03 , Delimitador
 03 ) Delimitador
 03 ; Delimitador
 04 end Palavra Reservada

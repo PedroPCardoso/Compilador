@@ -266,7 +266,13 @@ public class AnalisadorSintatico {
     
     private void bFuncao(){
         token = proximo();
-        System.out.println("Entrou aqui 1"+ token.getLexeme());
+        // Se for um id podemos ter chamada de funcoes ou atribuicao de variaveis
+        if(token.getType().equals("Identificador")){
+        	token = proximo();
+        	if (token.getLexeme().equals("(")){
+        		callFunction();
+        	}
+        }
         switch (token.getLexeme()){
         case "read":
          read();
@@ -274,6 +280,7 @@ public class AnalisadorSintatico {
         case "write":
         	write();
         break;
+        
         }
     }
     
@@ -578,5 +585,47 @@ public class AnalisadorSintatico {
         }
     }
 
-
-}
+    private void expressoes(){
+    	
+    }
+    
+    private void parameterCallFunction(){
+            tipo();
+    		identificador("Identificador");
+            if(token.getLexeme().equals("[")){
+            	declaracaoMatriz();
+            }
+            System.out.println("token:"+token.getLexeme());
+            
+            if(token.getLexeme().equals(",")){
+            	token = proximo();
+            	parameterCallFunction();
+            }
+             }
+    private void virg(){
+    	
+    }
+    private void callFunction(){
+    	
+    		if(token.getLexeme().equals("(")){
+    			token = proximo();
+    			if(!token.getLexeme().equals(")")){
+    				parameterCallFunction();
+    			}
+    			}
+    		if(token.getLexeme().equals(")")){
+    			token = proximo();
+    			if(!token.getLexeme().equals(";")){
+    				erroSintatico("falta ;"); 
+    			}
+    			else{
+    				token = proximo();
+    			}
+    		}
+    		else{
+    			erroSintatico("falta )");
+    			//colocar if verificando se o atual nao e alguma das outras opcoes
+    			token = proximo ();
+    		       }
+    	}
+    }

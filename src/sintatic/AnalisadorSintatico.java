@@ -459,70 +459,128 @@ public class AnalisadorSintatico {
         }
     }
 
-private void read(){
-	System.out.println("lexema e:"+token.getLexeme());
-	token = proximo();
-	System.out.println(token.getLexeme());
-		if (token.getLexeme().equals("(")){
-			System.out.println(token.getLexeme());
-			token = proximo();
-			System.out.println(token.getLexeme());
-		parametroRead();
-		if(!(token.getLexeme().equals(")")||token.getLexeme().equals(";"))){
-		if(!token.getLexeme().equals(")")){
-			// adicionar as outras opcoes aqui
-			erroSintatico("expressao read mal formada esperava )");
-			bFuncao();
-		}
-		else{
-			erroSintatico("expressao read mal formada esperava ;");
-			bFuncao();
-			
-		}
-		}
-		else if(token.getLexeme().equals(";")){
-			erroSintatico("expressao read mal formada esperava )");
-			token = proximo();
-			}
-		else if(token.getLexeme().equals(")")){
-			token = proximo();
-			if(!token.getLexeme().equals(";")){
-				erroSintatico("expressao read mal formada esperava ;");
-				bFuncao();
-			}
-				
-			}
-		}
-		
-	
-	else{
-		erroSintatico("read nao possui (");
-	}
-}
+    private void write() {
+        token = proximo();
+        if (token.getLexeme().equals("(")) {
+            token = proximo();
+            parametroWrite();
+            if (!(token.getLexeme().equals(")") || token.getLexeme().equals(";"))) {
+                if (!token.getLexeme().equals(")")) {
+                    // adicionar as outras opcoes aqui
+                    erroSintatico("expressao write mal formada esperava )");
+                    bFuncao();
+                } else {
+                    erroSintatico("expressao write mal formada esperava ;");
+                    bFuncao();
 
-private void parametroRead(){
-	if(token.getType().equals("Identifier")){
-		token = proximo();
-		if(token.getLexeme().equals("[")){
-			declaracaoMatriz();
-		}
-		if(token.getLexeme().equals(",")){
-			token = proximo();
-			parametroRead();
-		}
-		if(token.getType().equals("Identifier")){
-			erroSintatico("Esperava ,");
-			token = proximo();
-		}
-		else if(!token.getLexeme().equals(")")){
-			erroSintatico("Esperava Id ou ) ");
-			token = proximo ();
-		}
-	}
-	
-	else{
-		erroSintatico("Parametro read incorreto, falta Id ");
-	}
-}
+                }
+            } else if (token.getLexeme().equals(";")) {
+                erroSintatico("expressao write mal formada esperava )");
+                token = proximo();
+            } else if (token.getLexeme().equals(")")) {
+                token = proximo();
+                if (!token.getLexeme().equals(";")) {
+                    erroSintatico("expressao write mal formada esperava ;");
+                    
+                } else {
+                    bFuncao();
+                }
+
+            }
+        } else {
+            erroSintatico("write nao possui (");
+        }
+
+    }
+
+    private void parametroWrite() {
+        if (token.getType().equals("Identificador")) {
+            System.out.println("lexema e:" + token.getLexeme());
+            token = proximo();
+            if (token.getLexeme().equals("[")) {
+                declaracaoMatriz();
+            }
+            if (token.getLexeme().equals(",")) {
+                token = proximo();
+                parametroWrite();
+            }
+            if (token.getType().equals("Identifier")) {
+                erroSintatico("Esperava ,");
+                token = proximo();
+            } else if (!token.getLexeme().equals(")")) {
+                erroSintatico("Esperava Id ou ) ");
+                token = proximo();
+            }
+        } // no write podemos atribuir "amora" cadeia, 'o'char, 1numero, 
+        else if (token.getType().equals("string") || token.getType().equals("char") || token.getType().equals("number")) {
+            token = proximo();
+            if (token.getLexeme().equals(",")) {
+                token = proximo();
+                parametroWrite();
+            } else if (!token.getLexeme().equals(")")) {
+                erroSintatico("Esperava , ou ) ");
+            }
+        } else {
+            erroSintatico("Parametro write incorreto, falta Id ");
+        }
+    }
+
+    private void read() {
+        token = proximo();
+        if (token.getLexeme().equals("(")) {
+            token = proximo();
+            parametroRead();
+            if (!(token.getLexeme().equals(")") || token.getLexeme().equals(";"))) {
+                if (!token.getLexeme().equals(")")) {
+                    // adicionar as outras opcoes aqui
+                    erroSintatico("expressao read mal formada esperava )");
+                    bFuncao();
+                } else {
+                    erroSintatico("expressao read mal formada esperava ;");
+                    bFuncao();
+
+                }
+            } else if (token.getLexeme().equals(";")) {
+                erroSintatico("expressao read mal formada esperava )");
+                token = proximo();
+            } else if (token.getLexeme().equals(")")) {
+                token = proximo();
+                if (!token.getLexeme().equals(";")) {
+                    erroSintatico("expressao read mal formada esperava ;");
+                    bFuncao();
+                } else {
+                    bFuncao();
+                }
+
+            }
+        } else {
+            erroSintatico("read nao possui (");
+        }
+    }
+
+    private void parametroRead() {
+        if (token.getType().equals("Identificador")) {
+            System.out.println("lexema e:" + token.getLexeme());
+            token = proximo();
+            if (token.getLexeme().equals("[")) {
+                declaracaoMatriz();
+            }
+            if (token.getLexeme().equals(",")) {
+                token = proximo();
+                parametroRead();
+            }
+            if (token.getType().equals("Identifier")) {
+                erroSintatico("Esperava ,");
+                token = proximo();
+            } else if (!token.getLexeme().equals(")")) {
+                erroSintatico("Esperava Id ou ) ");
+                token = proximo();
+            }
+        } else {
+            erroSintatico("Parametro read incorreto, falta Id ");
+        }
+    }
+
+
 
 }

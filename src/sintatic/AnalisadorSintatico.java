@@ -30,46 +30,8 @@ public class AnalisadorSintatico {
 
     }
 
-    private void erroSintatico(String erro) {
-        if (!token.getLexeme().equals("EOF")) {
-            erros.add("Linha: " + (token.getLine()) + " " + erro + "\n"); //gera o erro normalizado e adiciona na lista de erros.
-        } else {
-            erros.add(erro);
-        }
-    }
-
-    private String verificaTipo(String esperado) {
-        if ((!token.getLexeme().equals("EOF")) && token.getType().equals(esperado)) { //verifica se o tipo do token atual e o que era esperado
-            String t = token.getLexeme();
-            token = proximo();
-            return t;
-        } else {
-            erroSintatico("falta " + esperado); //gera o erro se o tipo do token nao e o esperado 
-            return null;
-        }
-    }
-
-    private void terminal(String esperado) {
-        if ((!token.getLexeme().equals("EOF")) && token.getLexeme().equals(esperado)) { //verifica se o token atual e o que era esperado
-            token = proximo();
-        } else {
-            erroSintatico("Falta o token: " + esperado);   //gera o erro se o token nao e o esperado 
-        }
-    }
-
-    private Token proximo() {
-        if (contTokens < tokens.size()) { //verifica se ainda possuem tokens para a analise.
-            return tokens.get(contTokens++);
-        } else {
-            return new Token("EOF", "EOF",0, 0);  //cria um token de fim de arquivo. 
-        }
-    }
-
-    public ArrayList<String> getErros() {
-        return this.erros;
-    }
-
-    private void programa() {
+ 
+       private void programa() {
         if (token.getLexeme().equals("program")) {
             token = proximo();
             if(!token.getLexeme().equals("EOF")){
@@ -308,8 +270,10 @@ public class AnalisadorSintatico {
         switch (token.getLexeme()){
         case "read":
          read();
-        
-        
+         break;
+        case "write":
+        	write();
+        break;
         }
     }
     
@@ -527,6 +491,7 @@ public class AnalisadorSintatico {
 
     private void read() {
         token = proximo();
+        System.out.println("lexema encontrado:" + token.getLexeme());
         if (token.getLexeme().equals("(")) {
             token = proximo();
             parametroRead();
@@ -555,12 +520,16 @@ public class AnalisadorSintatico {
             }
         } else {
             erroSintatico("read nao possui (");
+            token = proximo();
+            if(token.getLexeme().equals(";")){
+            	token = proximo();
+            }
         }
     }
 
     private void parametroRead() {
         if (token.getType().equals("Identificador")) {
-            System.out.println("lexema e:" + token.getLexeme());
+            
             token = proximo();
             if (token.getLexeme().equals("[")) {
                 declaracaoMatriz();
@@ -581,6 +550,33 @@ public class AnalisadorSintatico {
         }
     }
 
+    private void terminal(String esperado) {
+        if ((!token.getLexeme().equals("EOF")) && token.getLexeme().equals(esperado)) { //verifica se o token atual e o que era esperado
+            token = proximo();
+        } else {
+            erroSintatico("Falta o token: " + esperado);   //gera o erro se o token nao e o esperado 
+        }
+    }
+
+    private Token proximo() {
+        if (contTokens < tokens.size()) { //verifica se ainda possuem tokens para a analise.
+            return tokens.get(contTokens++);
+        } else {
+            return new Token("EOF", "EOF",0, 0);  //cria um token de fim de arquivo. 
+        }
+    }
+
+    public ArrayList<String> getErros() {
+        return this.erros;
+    }
+
+    private void erroSintatico(String erro) {
+        if (!token.getLexeme().equals("EOF")) {
+            erros.add("Linha: " + (token.getLine()) + " " + erro + "\n"); 
+        } else {
+            erros.add(erro);
+        }
+    }
 
 
 }

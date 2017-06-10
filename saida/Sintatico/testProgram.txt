@@ -1,4 +1,2 @@
 Erro: Linha: 3 read nao possui (
 
-Erro: Linha: 3 Faltou end na funcao
-

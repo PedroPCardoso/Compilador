@@ -1,4 +1,0 @@
-Erro: Linha: 3 falta palavra reservada: integer, cadeia, real, boolean, char
-
-Erro: Linha: 3 falta Identificador
-

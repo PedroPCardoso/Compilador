@@ -1,0 +1,146 @@
+ 1 program palavra reservada
+ 2 var palavra reservada
+ 2 begin palavra reservada
+ 3 integer palavra reservada
+ 3 a Identificador
+ 3 , delimitador
+ 3 b Identificador
+ 3 , delimitador
+ 3 c Identificador
+ 3 , delimitador
+ 3 i Identificador
+ 3 = operador relacional
+ 3 "amora" string
+ 3 , delimitador
+ 3 d Identificador
+ 3 ; delimitador
+ 4 char palavra reservada
+ 4 a Identificador
+ 4 ; delimitador
+ 5 real palavra reservada
+ 5 ameixa Identificador
+ 5 [ delimitador
+ 5 1 numero
+ 5 ] delimitador
+ 5 [ delimitador
+ 5 2 numero
+ 5 ] delimitador
+ 5 [ delimitador
+ 5 3 numero
+ 5 ] delimitador
+ 5 = operador relacional
+ 5 [ delimitador
+ 5 true palavra reservada
+ 5 , delimitador
+ 5 6 numero
+ 5 , delimitador
+ 5 "amora" string
+ 5 ] delimitador
+ 5 , delimitador
+ 5 a Identificador
+ 5 , delimitador
+ 5 n Identificador
+ 5 = operador relacional
+ 5 1 numero
+ 5 ; delimitador
+ 6 end palavra reservada
+ 7 const palavra reservada
+ 7 begin palavra reservada
+ 8 integer palavra reservada
+ 8 a Identificador
+ 8 = operador relacional
+ 8 1 numero
+ 8 ; delimitador
+ 9 real palavra reservada
+ 9 quero Identificador
+ 9 = operador relacional
+ 9 "chocolate" string
+ 9 , delimitador
+ 9 a Identificador
+ 9 = operador relacional
+ 9 'a' char
+ 9 ; delimitador
+ 10 string palavra reservada
+ 10 ameixa Identificador
+ 10 = operador relacional
+ 10 [ delimitador
+ 10 "oi" string
+ 10 , delimitador
+ 10 1 numero
+ 10 ] delimitador
+ 10 , delimitador
+ 10 flocos Identificador
+ 10 = operador relacional
+ 10 1 numero
+ 10 ; delimitador
+ 11 end palavra reservada
+ 12 function palavra reservada
+ 12 teste Identificador
+ 12 ( delimitador
+ 12 integer palavra reservada
+ 12 a Identificador
+ 12 , delimitador
+ 12 real palavra reservada
+ 12 b Identificador
+ 12 ) delimitador
+ 12 begin palavra reservada
+ 13 a Identificador
+ 13 = operador relacional
+ 13 "ameixa" string
+ 13 ; delimitador
+ 14 soma Identificador
+ 14 = operador relacional
+ 14 - operador aritmetico
+ 14 a Identificador
+ 14 + operador aritmetico
+ 14 b Identificador
+ 14 * operador aritmetico
+ 14 b Identificador
+ 14 - operador aritmetico
+ 14 c Identificador
+ 14 ; delimitador
+ 15 integer palavra reservada
+ 15 a Identificador
+ 15 , delimitador
+ 15 b Identificador
+ 15 = operador relacional
+ 15 1 numero
+ 15 , delimitador
+ 15 c Identificador
+ 15 ; delimitador
+ 16 amora Identificador
+ 16 ( delimitador
+ 16 1 numero
+ 16 ) delimitador
+ 16 ; delimitador
+ 17 retorno Identificador
+ 17 -> retorno
+ 17 ( delimitador
+ 17 "la" string
+ 17 ) delimitador
+ 17 ; delimitador
+ 18 if palavra reservada
+ 18 ( delimitador
+ 18 ( delimitador
+ 18 a Identificador
+ 18 + operador aritmetico
+ 18 b Identificador
+ 18 ) delimitador
+ 18 != operador relacional
+ 18 c Identificador
+ 18 ) delimitador
+ 18 begin palavra reservada
+ 19 end palavra reservada
+ 20 else palavra reservada
+ 20 begin palavra reservada
+ 21 end palavra reservada
+ 22 read palavra reservada
+ 22 ( delimitador
+ 22 a Identificador
+ 22 , delimitador
+ 22 b Identificador
+ 22 ) delimitador
+ 22 ; delimitador
+ 23 end palavra reservada
+
+ Nao existem erros lexicos

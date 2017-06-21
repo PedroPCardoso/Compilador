@@ -1,6 +1,0 @@
-program 
-function nome ()
-begin
-amora(integer a,real b);
-end
-

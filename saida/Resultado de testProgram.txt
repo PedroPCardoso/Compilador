@@ -1,20 +1,0 @@
-01 program Palavra Reservada
-02 function Palavra Reservada
-02 nome Identificador
-02 ( Delimitador
-02 ) Delimitador
-03 begin Palavra Reservada
-03 amora Identificador
-03 ( Delimitador
-03 integer Palavra Reservada
-03 a Identificador
-03 , Delimitador
-03 real Palavra Reservada
-03 b Identificador
-03 , Delimitador
-03 ) Delimitador
-03 ; Delimitador
-04 end Palavra Reservada
-
-
-

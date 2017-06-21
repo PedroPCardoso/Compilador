@@ -1,0 +1,23 @@
+program
+var begin 
+integer a,b,c,i="amora",d;
+char a;
+real ameixa[1][2][3]=[true,6,"amora"],a,n=1;
+end
+const begin
+integer a=1;
+real quero = "chocolate", a='a';
+string ameixa=["oi",1],flocos = 1;
+end
+function teste(integer a,real b)begin
+a = "ameixa";
+soma = -a+b*b-c;
+integer a,b=1,c;
+amora(1);
+retorno->("la");
+if ((a+b)!=c)begin
+end
+else begin
+end
+read(a,b);
+end

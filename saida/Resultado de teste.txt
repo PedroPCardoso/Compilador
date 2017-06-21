@@ -1,25 +1,0 @@
-01 program Palavra Reservada
-01 start Identificador
-01 a Identificador
-01 < Operador Relacional
-01 b Identificador
-01 = Operador Relacional
-01 10 Numero
-02 a Identificador
-02 >= Operador Relacional
-02 b Identificador
-02 ; Delimitador
-03 tet Identificador
-08 -1251.12 numero negativo
-010 "String aqui " Cadeia de Caractere
-010 a Identificador
-010 || Operador Lógico
-010 t Identificador
-011 a Identificador
-011 && Operador Lógico
-011 1123 Numero
-012 123 Numero
-012 a Identificador
-
-
-
